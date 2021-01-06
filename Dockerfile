@@ -16,7 +16,10 @@ LABEL "maintainer"="Matt Brown <github@muglug.com>"
 RUN apk add --no-cache tini git
 
 # Install PHP extensions
-RUN docker-php-ext-install bcmath intl pdo_mysql imap soap opcache zip gmp gd
+RUN buildDeps="zlib1g-dev libicu-dev g++ libc-client-dev libkrb5-dev libxml2-dev libmcrypt-dev libgmp-dev libpng-dev libjpeg-dev libopenjp2-7-dev libzip-dev" \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends $buildDeps libtiff5 gnupg2 libfontconfig runit \
+    && docker-php-ext-install bcmath intl pdo_mysql imap soap opcache zip gmp gd
 
 COPY --from=composer:1.9 /usr/bin/composer /usr/bin/composer
 
