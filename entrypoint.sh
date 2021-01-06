@@ -14,7 +14,7 @@ if [ ! -z "$INPUT_REPORT_FILE" ]; then
 fi
 
 if test -f "composer.json"; then
-    echo '{"github-oauth": {"github.com": "'$INPUT_COMPOSER_GITHUB_TOKEN'"}}' > /root/.composer/auth.json
+    composer global config github-oauth.github.com "$INPUT_COMPOSER_GITHUB_TOKEN"
 
     IGNORE_PLATFORM_REQS=""
     if [ "$CHECK_PLATFORM_REQUIREMENTS" = "false" ] || [ "$INPUT_COMPOSER_CHECK_PLATFORM_REQUIREMENTS" = "false" ]; then
