@@ -39,5 +39,5 @@ find / -type f -name psalm.xml
 ls -al $GITHUB_WORKSPACE
 cat "$GITHUB_WORKSPACE/psalm.xml"
 
-/composer/vendor/bin/psalm --version
-/composer/vendor/bin/psalm --output-format=github $CONFIG_FILE $TAINT_ANALYSIS $REPORT
+"$GITHUB_WORKSPACE/vendor/bin/psalm" --version
+"$GITHUB_WORKSPACE/vendor/bin/psalm" --output-format=github $CONFIG_FILE $TAINT_ANALYSIS $REPORT
