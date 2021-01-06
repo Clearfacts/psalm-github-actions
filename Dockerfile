@@ -15,6 +15,9 @@ LABEL "maintainer"="Matt Brown <github@muglug.com>"
 
 RUN apk add --no-cache tini git
 
+# Install PHP extensions
+RUN docker-php-ext-install bcmath intl pdo_mysql imap soap opcache zip gmp gd
+
 COPY --from=composer:1.9 /usr/bin/composer /usr/bin/composer
 
 RUN COMPOSER_ALLOW_SUPERUSER=1 \
