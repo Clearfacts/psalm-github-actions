@@ -11,8 +11,8 @@ LABEL "maintainer"="Matt Brown <github@muglug.com>"
 
 # Code borrowed from mickaelandrieu/psalm-ga which in turn borrowed from phpqa/psalm
 
-# Install Tini - https://github.com/krallin/tini
-RUN apt-get install tini git
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends git
 
 # Install PHP extensions
 RUN buildDeps="zlib1g-dev libicu-dev g++ libc-client-dev libkrb5-dev libxml2-dev libmcrypt-dev libgmp-dev libpng-dev libjpeg-dev libopenjp2-7-dev libzip-dev" \
