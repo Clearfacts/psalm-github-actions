@@ -32,8 +32,5 @@ else
     echo "composer.json not found in repo, skipping Composer installation"
 fi
 
-echo "Find config file to use for testing"
-find / -type f -name psalm.xml
-
 /composer/vendor/bin/psalm --version
-/composer/vendor/bin/psalm --output-format=github --config=psalm.xml $TAINT_ANALYSIS $REPORT
+/composer/vendor/bin/psalm --output-format=github --config=/github/workspace/psalm.xml $TAINT_ANALYSIS $REPORT
