@@ -28,7 +28,12 @@ inputs:
     required: false
     default: false
     description: 'Whether or not the --ignore-platform-reqs flag is passed to Composer'
+  composer_github_token:
+    required: true
+    description: 'Required for fetching private composer dependencies'
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.composer_github_token }}
