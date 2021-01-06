@@ -35,4 +35,4 @@ fi
 CONFIG_FILE="--config=$GITHUB_WORKSPACE/psalm.xml"
 
 "$GITHUB_WORKSPACE/vendor/bin/psalm" --version
-"$GITHUB_WORKSPACE/vendor/bin/psalm" --output-format=github $CONFIG_FILE $TAINT_ANALYSIS $REPORT --no-cache
+"$GITHUB_WORKSPACE/vendor/bin/psalm" --output-format=github $CONFIG_FILE $TAINT_ANALYSIS $REPORT --no-cache --debug
