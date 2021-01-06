@@ -19,7 +19,7 @@ RUN buildDeps="zlib1g-dev libicu-dev g++ libc-client-dev libkrb5-dev libxml2-dev
     && apt-get update \
     && apt-get install -y --no-install-recommends $buildDeps libtiff5 gnupg2 libfontconfig runit \
     && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
-    && docker-php-ext-install bcmath intl pdo_mysql imap soap opcache zip gmp gd
+    && docker-php-ext-install bcmath intl pdo_mysql imap soap opcache zip gmp gd calendar
 
 COPY --from=composer:1.9 /usr/bin/composer /usr/bin/composer
 
