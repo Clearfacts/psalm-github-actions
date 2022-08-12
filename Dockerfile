@@ -15,6 +15,16 @@ LABEL "maintainer"="Matt Brown <github@muglug.com>"
 
 RUN apk add --no-cache tini git openssh-client
 
+# Install PHP extensions
+RUN buildDeps="g++ libxml2-dev libmcrypt-dev libpng-dev imap-dev krb5-dev openssl-dev icu-dev gmp-dev libzip-dev zip runit ${PHPIZE_DEPS}" \
+    && apk add --no-cache $buildDeps \
+    && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
+    && docker-php-ext-install bcmath intl pdo_mysql imap soap opcache zip gmp gd calendar \
+    && pecl install -o -f redis \
+    && rm -rf /tmp/pear \
+    && docker-php-ext-enable redis \
+    && apk del $buildDeps
+
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 RUN COMPOSER_ALLOW_SUPERUSER=1 \

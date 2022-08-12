@@ -45,6 +45,16 @@ else
 	  echo "No private keys supplied"
 fi
 
+if [ -n "$INPUT_COMPOSER_GITHUB_TOKEN" ]
+then
+    echo "::group::OAuth setting github oauth token"
+    composer global config github-oauth.github.com "$INPUT_COMPOSER_GITHUB_TOKEN"
+    echo "OK"
+    echo "::endgroup::"
+else
+	  echo "No github token supplied"
+fi
+
 if [ -n "$INPUT_RELATIVE_DIR" ]
 then
     if [ -d "$INPUT_RELATIVE_DIR" ]; then

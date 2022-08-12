@@ -37,8 +37,10 @@ inputs:
   ssh_domain:
     description: The domain to gather SSH public keys for (automatic for github.com, gitlab.com, bitbucket.org)
     required: false
-
+  composer_github_token:
+    required: true
+    description: 'Required for fetching private composer dependencies'
 
 runs:
   using: 'docker'
-  image: 'docker://vimeo/psalm-github-actions'
+  image: 'Dockerfile'
