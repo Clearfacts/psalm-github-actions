@@ -85,5 +85,5 @@ else
     echo "composer.json not found in repo, skipping Composer installation"
 fi
 
-/composer/vendor/bin/psalm --version
-/composer/vendor/bin/psalm --output-format=github $TAINT_ANALYSIS $REPORT $*
+vendor/bin/psalm --version
+vendor/bin/psalm --output-format=github $TAINT_ANALYSIS $REPORT $*
