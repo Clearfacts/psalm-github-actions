@@ -111,3 +111,8 @@ jobs:
 ```
 
 github.com, gitlab.com and bitbucket.org are automatically added to the list of SSH known hosts. You can provide your own domain via `ssh_domain` input.
+
+## Technical debt links
+
+[Barometer IT](https://wolterskluwer.barometerit.com/b/system/041800002496)
+[SonarQube Project](https://sonarqube.cloud-dev.wolterskluwer.eu//dashboard?id=clearfacts%3Apsalm-github-actions)
