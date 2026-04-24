@@ -116,4 +116,4 @@ github.com, gitlab.com and bitbucket.org are automatically added to the list of 
 - [Barometer IT](https://wolterskluwer.barometerit.com/b/system/041800002496)
 - [SonarQube Project](https://sonarqube.cloud-dev.wolterskluwer.eu/dashboard?id=clearfacts%3Apsalm-github-actions)
 - [Black Duck Project](https://wolterskluwer.app.blackduck.com/api/projects?q=name:psalm-github-actions)
-- [Checkmarx Project](https://test4tools.cchaxcess.com/CxWebClient/Projects.aspx)
+- [Checkmarx Project](https://test4tools.cchaxcess.com/CxWebClient/ProjectStateSummary.aspx?projectid=18818)
