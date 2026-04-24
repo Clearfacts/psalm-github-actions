@@ -117,3 +117,5 @@ github.com, gitlab.com and bitbucket.org are automatically added to the list of 
 - [SonarQube Project](https://sonarqube.cloud-dev.wolterskluwer.eu/dashboard?id=clearfacts%3Apsalm-github-actions)
 - [Black Duck Project](https://wolterskluwer.app.blackduck.com/api/projects/759f5a57-5412-46d5-87d1-9ba6fc782cfe)
 - [Checkmarx Project](https://test4tools.cchaxcess.com/CxWebClient/ProjectStateSummary.aspx?projectid=18818)
+
+- [x] non-production code only
